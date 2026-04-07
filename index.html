@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jenny Siede</title>
+  <meta name="description" content="Jenny Siede is a technical apparel designer working at the intersection of design, materials, and production." />
+
+  <!-- Fonts: matching your Figma weight-contrast treatment -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;700&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --bg: #f2f2f0;
+      --fg: #0e0e0e;
+      --fg-muted: #4a4a4a;
+      --accent: #0e0e0e;
+      --font: 'DM Sans', sans-serif;
+    }
+
+    html {
+      font-size: 16px;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--fg);
+      font-family: var(--font);
+      font-weight: 400;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    /* ── LAYOUT ── */
+    .page {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 48px 48px 80px;
+    }
+
+    /* ── NAME MARK ── */
+    .name-mark {
+      font-size: clamp(2.8rem, 6vw, 5.2rem);
+      font-weight: 300;
+      letter-spacing: -0.02em;
+      line-height: 1;
+      margin-bottom: 56px;
+      color: var(--fg);
+    }
+
+    .name-mark strong {
+      font-weight: 700;
+    }
+
+    /* ── HERO GRID ── */
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    /* ── PHOTO ── */
+    .photo-wrap {
+      position: relative;
+    }
+
+    .photo-wrap img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+    }
+
+    /* ── BIO ── */
+    .bio {
+      padding-top: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .bio p {
+      font-size: clamp(0.95rem, 1.4vw, 1.05rem);
+      font-weight: 400;
+      color: var(--fg);
+      line-height: 1.75;
+      max-width: 38ch;
+    }
+
+    /* ── CTA ── */
+    .cta {
+      margin-top: 8px;
+    }
+
+    .cta a {
+      display: inline-block;
+      font-family: var(--font);
+      font-size: 0.95rem;
+      font-weight: 400;
+      letter-spacing: 0.01em;
+      color: var(--fg);
+      text-decoration: none;
+      border-bottom: 1px solid var(--fg);
+      padding-bottom: 2px;
+      transition: opacity 0.2s ease;
+    }
+
+    .cta a:hover {
+      opacity: 0.5;
+    }
+
+    /* ── MOBILE ── */
+    @media (max-width: 768px) {
+      .page {
+        padding: 36px 24px 64px;
+      }
+
+      .name-mark {
+        margin-bottom: 36px;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+
+      .bio {
+        padding-top: 0;
+      }
+
+      .bio p {
+        max-width: 100%;
+      }
+    }
+
+    /* ── FADE IN ── */
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(16px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .name-mark {
+      animation: fadeUp 0.6s ease both;
+    }
+
+    .photo-wrap {
+      animation: fadeUp 0.6s 0.1s ease both;
+    }
+
+    .bio {
+      animation: fadeUp 0.6s 0.2s ease both;
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+
+    <h1 class="name-mark">Jenny<strong>Siede</strong></h1>
+
+    <div class="hero">
+      <div class="photo-wrap">
+        <!-- Replace src with your actual photo filename once added to repo -->
+        <img
+          src="jenny-siede.jpg"
+          alt="Jenny Siede"
+          width="600"
+          height="800"
+        />
+      </div>
+
+      <div class="bio">
+        <p>
+          Jenny Siede is a technical apparel designer working at the
+          intersection of design, materials, and production.
+        </p>
+        <p>
+          With a background in software engineering and manufacturing,
+          she approaches garments as structured systems, where fit,
+          fabric, and construction decisions are made with precision,
+          not guesswork.
+        </p>
+        <p>
+          Her work focuses on the decisions that happen before
+          production begins, where clarity reduces rework and structure
+          ensures consistency at scale.
+        </p>
+        <div class="cta">
+          <a href="mailto:jenny@jennysiede.com">hello@jennysiede.com</a>
+        </div>
+      </div>
+    </div>
+
+  </main>
+</body>
+</html>
