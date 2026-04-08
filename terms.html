@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terms of Use &mdash; Jenny Siede</title>
+  <meta name="description" content="Terms of Use for jennysiede.com." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;700&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #f2f2f0;
+      --fg: #0e0e0e;
+      --fg-muted: #4a4a4a;
+      --fg-faint: #888;
+      --rule: #d4d4d0;
+      --font: 'DM Sans', sans-serif;
+    }
+
+    html { font-size: 16px; scroll-behavior: smooth; }
+
+    body {
+      background-color: var(--bg);
+      color: var(--fg);
+      font-family: var(--font);
+      font-weight: 400;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    /* Nav */
+    .nav {
+      padding: 24px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .nav-back {
+      font-size: 0.875rem;
+      font-weight: 400;
+      color: var(--fg-muted);
+      text-decoration: none;
+      letter-spacing: 0.01em;
+      border-bottom: 1px solid transparent;
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    .nav-back:hover { color: var(--fg); border-color: var(--fg); }
+
+    .nav-site {
+      font-size: 0.8rem;
+      color: var(--fg-faint);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    /* Page */
+    .page {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 64px 48px 120px;
+    }
+
+    .page-eyebrow {
+      font-size: 0.75rem;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--fg-faint);
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 300;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      margin-bottom: 12px;
+    }
+
+    .page-meta {
+      font-size: 0.85rem;
+      color: var(--fg-faint);
+      margin-bottom: 56px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .tou-section { margin-bottom: 40px; }
+
+    .tou-section h2 {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--fg-muted);
+      margin-bottom: 12px;
+    }
+
+    .tou-section p {
+      font-size: 0.95rem;
+      color: var(--fg-muted);
+      line-height: 1.8;
+      margin-bottom: 10px;
+    }
+
+    .tou-section ul {
+      padding-left: 20px;
+      margin: 8px 0;
+    }
+
+    .tou-section li {
+      font-size: 0.95rem;
+      color: var(--fg-muted);
+      line-height: 1.8;
+      margin-bottom: 4px;
+    }
+
+    .tou-section a {
+      color: var(--fg);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid var(--rule);
+      margin: 32px 0;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--rule);
+      padding: 28px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .footer-copy {
+      font-size: 0.8rem;
+      color: var(--fg-faint);
+    }
+
+    .footer-links {
+      list-style: none;
+      display: flex;
+      gap: 24px;
+    }
+
+    .footer-links a {
+      font-size: 0.8rem;
+      color: var(--fg-faint);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--fg); }
+
+    @media (max-width: 640px) {
+      .nav { padding: 20px 24px; }
+      .page { padding: 40px 24px 80px; }
+      footer { padding: 24px; flex-direction: column; align-items: flex-start; }
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(12px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .page { animation: fadeUp 0.5s ease both; }
+  </style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="/" class="nav-back">&larr; jennysiede.com</a>
+  <span class="nav-site">Legal</span>
+</nav>
+
+<main class="page">
+
+  <p class="page-eyebrow">jennysiede.com</p>
+  <h1>Terms of<strong> Use</strong></h1>
+  <p class="page-meta">Effective date: April 8, 2026</p>
+
+  <div class="tou-section">
+    <h2>1. Acceptance</h2>
+    <p>By accessing or using jennysiede.com (the &ldquo;Site&rdquo;), you agree to these Terms of Use. If you do not agree, please do not use the Site.</p>
+  </div>
+
+  <hr>
+
+  <div class="tou-section">
+    <h2>2. Who operates this site</h2>
+    <p>The Site is operated by Jenny Siede through Green Neurons Design and Technologies PBC (operating as Green Neurons Design + Development), a public benefit corporation incorporated in Texas. References to &ldquo;we,&rdquo; &ldquo;us,&rdquo; or &ldquo;our&rdquo; refer to Green Neurons Design and Technologies PBC.</p>
+  </div>
+
+  <hr>
+
+  <div class="tou-section">
+    <h2>3. Intellectual property</h2>
+    <p>All content on this Site &mdash; including text, graphics, tool outputs, design work, and the Green Neurons brand identity &mdash; is owned by or licensed to Green Neurons Design and Technologies PBC. You may not reproduce, distribute, or create derivative works from any Site content without prior written permission.</p>
+    <p>Neurow&#275;v&trade; is a suite of design thinking and cognitive tools for designing apparel and wearable products, and is a trademark of Green Neurons Design and Technologies PBC. All rights reserved.</p>
+  </div>
+
+  <hr>
+
+  <div class="tou-section">
+    <h2>4. Permitted use</h2>
+    <p>You may access the Site for lawful personal or professional evaluation purposes. You may not:</p>
+    <ul>
+      <li>Scrape, harvest, or systematically extract Site content</li>
+      <li>Use Site content to train machine learning models without written consent</li>
+      <li>Impersonate Green Neurons, Jenny Siede, or any affiliated entity</li>
+      <li>Use the Site in any way that violates applicable law</li>
+    </ul>
+  </div>
+
+  <hr>
+
+  <div class="tou-section">
+    <h2>5. Tools and interactive features</h2>
+    <p>Any interactive tools or calculators on the Site are provided for informational purposes only. Outputs do not constitute professional, legal, financial, or design advice. We make no warranty as to accuracy or fitness for a particular purpose. Use at your own discretion.</p>
+  </div>
+
+  <hr>
+
+  <div class="tou-section">
+    <h2>6. No warranty</h2>
+    <p>The Site is provided &ldquo;as is&rdquo; without warranties of any kind, express or implied. We do not warrant that the Site will be uninterrupted, error-free, or free of harmful components.</p>
+  </div>
+
+  <hr>
+
+  <div class="tou-section">
+    <h2>7. Limitation of liability</h2>
+    <p>To the fullest extent permitted by law, Green Neurons Design and Technologies PBC shall not be liable for any indirect, incidental, special, or consequential damages arising from your use of or inability to use the Site.</p>
+  </div>
+
+  <hr>
+
+  <div class="tou-section">
+    <h2>8. External links</h2>
+    <p>The Site may link to third-party websites. We are not responsible for the content, privacy practices, or availability of those sites.</p>
+  </div>
+
+  <hr>
+
+  <div class="tou-section">
+    <h2>9. Governing law</h2>
+    <p>These Terms are governed by the laws of the State of Texas, without regard to conflict of law principles. Any disputes shall be resolved in the courts of Tarrant County, Texas.</p>
+  </div>
+
+  <hr>
+
+  <div class="tou-section">
+    <h2>10. Changes</h2>
+    <p>We may update these Terms at any time. Continued use of the Site after changes constitutes acceptance of the revised Terms. The effective date above reflects the most recent revision.</p>
+  </div>
+
+  <hr>
+
+  <div class="tou-section">
+    <h2>11. Contact</h2>
+    <p>Questions about these Terms? Reach us at <a href="mailto:jenny@jennysiede.com">jenny@jennysiede.com</a>.</p>
+  </div>
+
+</main>
+
+<footer>
+  <span class="footer-copy">&copy; 2026 jennysiede.com &middot; Green Neurons Design and Technologies PBC &middot; All rights reserved.</span>
+  <ul class="footer-links">
+    <li><a href="/">Home</a></li>
+    <li><a href="/terms.html">Terms of Use</a></li>
+  </ul>
+</footer>
+
+</body>
+</html>
