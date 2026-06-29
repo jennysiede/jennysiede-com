@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Discovery &mdash; Jenny Siede</title>
+  <meta name="description" content="A free 15-minute conversation about your project. Zoom or phone. No pitch, no pressure." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;700&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #f2f2f0;
+      --fg: #0e0e0e;
+      --fg-muted: #4a4a4a;
+      --fg-faint: #888;
+      --rule: #d4d4d0;
+      --font: 'DM Sans', sans-serif;
+    }
+
+    html { font-size: 16px; scroll-behavior: smooth; }
+
+    body {
+      background-color: var(--bg);
+      color: var(--fg);
+      font-family: var(--font);
+      font-weight: 400;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    /* Nav */
+    .nav {
+      padding: 24px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .nav-back {
+      font-size: 0.875rem;
+      font-weight: 400;
+      color: var(--fg-muted);
+      text-decoration: none;
+      letter-spacing: 0.01em;
+      border-bottom: 1px solid transparent;
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    .nav-back:hover { color: var(--fg); border-color: var(--fg); }
+
+    .nav-site {
+      font-size: 0.8rem;
+      color: var(--fg-faint);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    /* Page */
+    .page {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 64px 48px 120px;
+    }
+
+    .page-eyebrow {
+      font-size: 0.75rem;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--fg-faint);
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 300;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      margin-bottom: 16px;
+    }
+
+    h1 strong { font-weight: 700; }
+
+    .page-hook {
+      font-size: 1.05rem;
+      color: var(--fg-muted);
+      font-weight: 400;
+      margin-bottom: 48px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid var(--rule);
+      line-height: 1.7;
+    }
+
+    .section { margin-bottom: 36px; }
+
+    .section h2 {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--fg-muted);
+      margin-bottom: 12px;
+    }
+
+    .section p {
+      font-size: 0.95rem;
+      color: var(--fg-muted);
+      line-height: 1.8;
+      margin-bottom: 10px;
+    }
+
+    .section ul {
+      padding-left: 20px;
+      margin: 8px 0;
+    }
+
+    .section li {
+      font-size: 0.95rem;
+      color: var(--fg-muted);
+      line-height: 1.8;
+      margin-bottom: 4px;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid var(--rule);
+      margin: 32px 0;
+    }
+
+    /* Book block */
+    .book-block {
+      margin: 40px 0;
+      padding: 32px;
+      background: var(--fg);
+      color: var(--bg);
+    }
+
+    .book-block-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      opacity: 0.4;
+      margin-bottom: 12px;
+    }
+
+    .book-block-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      margin-bottom: 20px;
+    }
+
+    .book-links {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .book-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.9rem;
+      color: var(--bg);
+      text-decoration: none;
+      opacity: 0.85;
+      transition: opacity 0.2s;
+    }
+
+    .book-link:hover { opacity: 1; }
+
+    .book-link-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      opacity: 0.4;
+      min-width: 44px;
+    }
+
+    /* LOI footnote */
+    .loi-note {
+      margin-top: 48px;
+      padding-top: 32px;
+      border-top: 1px solid var(--rule);
+    }
+
+    .loi-note p {
+      font-size: 0.82rem;
+      color: var(--fg-faint);
+      line-height: 1.7;
+    }
+
+    .loi-note a {
+      color: var(--fg-muted);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      transition: color 0.2s;
+    }
+
+    .loi-note a:hover { color: var(--fg); }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--rule);
+      padding: 28px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .footer-copy {
+      font-size: 0.8rem;
+      color: var(--fg-faint);
+    }
+
+    .footer-links {
+      list-style: none;
+      display: flex;
+      gap: 24px;
+    }
+
+    .footer-links a {
+      font-size: 0.8rem;
+      color: var(--fg-faint);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--fg); }
+
+    @media (max-width: 640px) {
+      .nav { padding: 20px 24px; }
+      .page { padding: 40px 24px 80px; }
+      .book-block { padding: 24px; }
+      footer { padding: 24px; flex-direction: column; align-items: flex-start; }
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(12px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .page { animation: fadeUp 0.5s ease both; }
+  </style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="../index.html" class="nav-back">&larr; jennysiede.com</a>
+  <span class="nav-site">Engagement</span>
+</nav>
+
+<main class="page">
+
+  <p class="page-eyebrow">Green Neurons Design and Technologies PBC</p>
+  <h1>Discovery<strong> Session</strong></h1>
+  <p class="page-hook">
+    A free 15-minute conversation &mdash; Zoom or phone &mdash; to hear about your project
+    and answer your questions. No pitch. No obligation.
+  </p>
+
+  <div class="section">
+    <h2>What this is</h2>
+    <p>
+      The Discovery session is how every Green Neurons engagement begins. Before any
+      contracts or commitments, we spend fifteen minutes getting oriented: what you are
+      building, where you are in the process, and whether technical design consulting
+      is actually the right fit for your project right now.
+    </p>
+    <p>
+      If it is not the right fit, we will tell you that too.
+    </p>
+  </div>
+
+  <hr>
+
+  <div class="section">
+    <h2>What we cover</h2>
+    <ul>
+      <li>What you are making and where you are in development</li>
+      <li>Key constraints &mdash; timeline, materials, production volume, budget range</li>
+      <li>Whether the project needs design, development, manufacturing support, or some combination</li>
+      <li>How Green Neurons works and what a formal engagement looks like</li>
+    </ul>
+  </div>
+
+  <hr>
+
+  <div class="section">
+    <h2>What to expect</h2>
+    <p>
+      Come prepared to describe your project in plain terms. You do not need a brief,
+      a spec sheet, or a fully formed idea &mdash; just enough context for a real
+      conversation. Jenny will ask direct questions and give direct answers.
+    </p>
+    <p>
+      The session runs fifteen minutes by design. If the conversation warrants more
+      time, we schedule a follow-up.
+    </p>
+  </div>
+
+  <div class="book-block">
+    <p class="book-block-label">Schedule a session</p>
+    <p class="book-block-title">15 minutes &middot; Free &middot; Zoom or phone</p>
+    <div class="book-links">
+      <a href="mailto:jenny@jennysiede.com?subject=Discovery%20Session" class="book-link">
+        <span class="book-link-label">Email</span>
+        jenny@jennysiede.com
+      </a>
+      <a href="tel:+14693403558" class="book-link">
+        <span class="book-link-label">Phone</span>
+        (469) 340-3558
+      </a>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="section">
+    <h2>What comes next</h2>
+    <p>
+      If there is a mutual fit, Green Neurons will issue a Letter of Intent &mdash; a plain-language
+      pre-engagement document that establishes how we communicate, how each party&rsquo;s
+      work is protected, and what the path forward looks like. Signing it does not
+      create a financial obligation.
+    </p>
+    <p>
+      When you are ready to proceed into formal engagement, a $500 deposit initiates
+      the requirements analysis and Proforma development phase. Half of that deposit
+      is credited toward your first Proforma invoice.
+    </p>
+  </div>
+
+  <div class="loi-note">
+    <p>
+      Want to read ahead?
+      <a href="GN-LOI-v2.pdf" target="_blank" rel="noopener">Download the Letter of Intent (PDF)</a>
+      &mdash; the document we send once a fit is confirmed.
+    </p>
+  </div>
+
+</main>
+
+<footer>
+  <span class="footer-copy">&copy; 2026 jennysiede.com &middot; Green Neurons Design and Technologies PBC &middot; All rights reserved.</span>
+  <ul class="footer-links">
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="../terms.html">Terms of Use</a></li>
+  </ul>
+</footer>
+
+</body>
+</html>

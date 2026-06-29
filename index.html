@@ -6,7 +6,6 @@
   <title>Jenny Siede</title>
   <meta name="description" content="Jenny Siede is a technical apparel designer working at the intersection of design, materials, and production." />
 
-  <!-- Fonts: matching your Figma weight-contrast treatment -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;700&display=swap" rel="stylesheet" />
@@ -44,15 +43,14 @@
       flex-direction: column;
     }
 
-    /* ── LAYOUT ── */
     .page {
       max-width: 1200px;
       margin: 0 auto;
       padding: 48px 48px 80px;
       flex: 1;
+      position: relative;
     }
 
-    /* ── NAME MARK (SVG logo) ── */
     .name-mark {
       display: block;
       margin-bottom: 56px;
@@ -65,7 +63,6 @@
       fill: var(--fg);
     }
 
-    /* ── HERO GRID ── */
     .hero {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -73,7 +70,6 @@
       align-items: start;
     }
 
-    /* ── PHOTO ── */
     .photo-wrap {
       position: relative;
     }
@@ -85,7 +81,6 @@
       object-fit: cover;
     }
 
-    /* ── BIO ── */
     .bio {
       padding-top: 40px;
       display: flex;
@@ -101,7 +96,6 @@
       max-width: 38ch;
     }
 
-    /* ── CTA ── */
     .cta {
       margin-top: 8px;
     }
@@ -123,7 +117,6 @@
       opacity: 0.5;
     }
 
-    /* ── FOOTER ── */
     footer {
       border-top: 1px solid var(--rule);
       padding: 24px 48px;
@@ -156,7 +149,6 @@
       color: var(--fg);
     }
 
-    /* ── MOBILE ── */
     @media (max-width: 768px) {
       .page {
         padding: 36px 24px 64px;
@@ -183,6 +175,11 @@
         max-width: 100%;
       }
 
+      .work-section {
+        margin-top: 56px;
+        padding-top: 40px;
+      }
+
       footer {
         padding: 20px 24px;
         flex-direction: column;
@@ -191,7 +188,6 @@
       }
     }
 
-    /* ── FADE IN ── */
     @keyframes fadeUp {
       from {
         opacity: 0;
@@ -203,27 +199,52 @@
       }
     }
 
-    .name-mark {
-      animation: fadeUp 0.6s ease both;
+    .name-mark { animation: fadeUp 0.6s ease both; }
+    .photo-wrap { animation: fadeUp 0.6s 0.1s ease both; }
+    .bio { animation: fadeUp 0.6s 0.2s ease both; }
+    footer { animation: fadeUp 0.6s 0.3s ease both; }
+
+    /* NAV */
+    .site-nav {
+      position: absolute;
+      top: 48px;
+      right: 48px;
+      display: flex;
+      gap: 24px;
+      list-style: none;
+      animation: fadeUp 0.6s 0.05s ease both;
     }
 
-    .photo-wrap {
-      animation: fadeUp 0.6s 0.1s ease both;
+    .site-nav a {
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--fg-muted);
+      text-decoration: none;
+      transition: color 0.2s;
     }
 
-    .bio {
-      animation: fadeUp 0.6s 0.2s ease both;
+    .site-nav a:hover {
+      color: var(--fg);
     }
 
-    footer {
-      animation: fadeUp 0.6s 0.3s ease both;
+    @media (max-width: 768px) {
+      .site-nav {
+        top: 36px;
+        right: 24px;
+      }
     }
   </style>
 </head>
 <body>
   <main class="page">
 
-    <!-- TRADENAME: inline SVG logo (light Jenny + bold Siede) -->
+    <nav aria-label="Site navigation">
+      <ul class="site-nav">
+        <li><a href="forms/discovery.html">[ Discovery ]</a></li>
+      </ul>
+    </nav>
+
     <h1 class="name-mark" aria-label="jennysiede">
       <svg id="OUTLINED" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500.4 111.6" role="img" aria-hidden="true">
         <g id="JENNY">
