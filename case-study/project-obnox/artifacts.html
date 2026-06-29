@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Artifacts — Project ObNOX™ — Jenny Siede</title>
+  <meta name="description" content="The first ObNOX™ artifacts — the Summer 2026 business card and color study card." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #f2f2f0;
+      --fg: #0e0e0e;
+      --fg-muted: #4a4a4a;
+      --fg-faint: #888;
+      --rule: #d4d4d0;
+      --font: 'DM Sans', sans-serif;
+      --obnox-green: #49FB5F;
+      --poison-lily: #fb0643;
+      --maniac-magenta: #e00fde;
+      --bermuda-harbor: #2af2dc;
+      --crypto-tangerine: #fc7326;
+    }
+
+    html { font-size: 16px; scroll-behavior: smooth; }
+
+    body {
+      background-color: var(--bg);
+      color: var(--fg);
+      font-family: var(--font);
+      font-weight: 400;
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .page { max-width: 1200px; margin: 0 auto; padding: 48px 48px 80px; flex: 1; }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 64px;
+      animation: fadeUp 0.5s ease both;
+    }
+
+    .nav-home {
+      font-size: 0.85rem;
+      color: var(--fg-muted);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .nav-home:hover { color: var(--fg); border-color: var(--fg); }
+
+    .nav-sub { display: flex; gap: 24px; list-style: none; }
+    .nav-sub a {
+      font-size: 0.85rem;
+      color: var(--fg-muted);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .nav-sub a:hover { color: var(--fg); border-color: var(--fg); }
+    .nav-sub a.active { color: var(--fg); border-color: var(--fg); }
+
+    .hero { margin-bottom: 64px; animation: fadeUp 0.5s 0.1s ease both; }
+
+    .eyebrow {
+      font-size: 0.8rem;
+      color: var(--fg-faint);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      font-weight: 700;
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      margin-bottom: 20px;
+    }
+
+    .hero-desc {
+      font-size: clamp(1rem, 1.5vw, 1.1rem);
+      color: var(--fg-muted);
+      max-width: 52ch;
+      line-height: 1.8;
+    }
+
+    /* ARTIFACT BLOCKS */
+    .artifact {
+      margin-bottom: 80px;
+      animation: fadeUp 0.5s 0.2s ease both;
+    }
+
+    .artifact-header {
+      display: flex;
+      align-items: baseline;
+      gap: 16px;
+      margin-bottom: 32px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .artifact-number {
+      font-size: 0.72rem;
+      color: var(--fg-faint);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      flex-shrink: 0;
+    }
+
+    .artifact-title {
+      font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+    }
+
+    .artifact-body {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    .artifact-image {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .artifact-meta {
+      padding-top: 8px;
+    }
+
+    .meta-row {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      margin-bottom: 28px;
+      padding-bottom: 28px;
+      border-bottom: 1px solid var(--rule);
+    }
+    .meta-row:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+
+    .meta-label {
+      font-size: 0.72rem;
+      color: var(--fg-faint);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .meta-value {
+      font-size: 0.95rem;
+      color: var(--fg);
+      line-height: 1.65;
+    }
+
+    .design-principle {
+      background: var(--fg);
+      color: var(--bg);
+      padding: 24px 28px;
+      margin-top: 32px;
+    }
+
+    .design-principle p {
+      font-size: 1rem;
+      font-weight: 700;
+      font-style: italic;
+      line-height: 1.55;
+      opacity: 0.9;
+    }
+
+    /* COLOR STRIPE */
+    .artifact-stripe {
+      display: flex;
+      height: 4px;
+      margin-top: 32px;
+    }
+    .artifact-stripe span { flex: 1; }
+
+    footer {
+      border-top: 1px solid var(--rule);
+      padding: 24px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .footer-copy { font-size: 0.8rem; color: var(--fg-faint); }
+    .footer-links { list-style: none; display: flex; gap: 20px; }
+    .footer-links a { font-size: 0.8rem; color: var(--fg-faint); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--fg); }
+
+    @media (max-width: 768px) {
+      .page { padding: 32px 24px 64px; }
+      nav { margin-bottom: 40px; }
+      .artifact-body { grid-template-columns: 1fr; gap: 32px; }
+      footer { padding: 20px 24px; flex-direction: column; align-items: flex-start; }
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(14px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+
+    <nav aria-label="Site navigation">
+      <a href="/" class="nav-home">← jennysiede.com</a>
+      <ul class="nav-sub">
+        <li><a href="index.html">Overview</a></li>
+        <li><a href="color-system.html">Color system</a></li>
+        <li><a href="artifacts.html" class="active">Artifacts</a></li>
+      </ul>
+    </nav>
+
+    <header class="hero">
+      <p class="eyebrow">Project ObNOX™ &nbsp;·&nbsp; Artifacts</p>
+      <h1>What got made</h1>
+      <p class="hero-desc">
+        The first two ObNOX™ artifacts. Both started as a question about
+        attention. Both answered it with color.
+      </p>
+    </header>
+
+    <!-- ARTIFACT 01: BUSINESS CARD -->
+    <div class="artifact">
+      <div class="artifact-header">
+        <span class="artifact-number">Artifact 01</span>
+        <h2 class="artifact-title">Summer 2026 business card</h2>
+      </div>
+      <div class="artifact-body">
+        <img
+          src="../../assets/project-obnox/ObNOX-BUSINESS-CARD.png"
+          alt="Jenny Siede Summer 2026 business card — ObNOX Green background with black typography and gn logomark"
+          class="artifact-image"
+        />
+        <div class="artifact-meta">
+          <div class="meta-row">
+            <span class="meta-label">Type</span>
+            <span class="meta-value">Print — business card</span>
+          </div>
+          <div class="meta-row">
+            <span class="meta-label">Primary color</span>
+            <span class="meta-value">ObNOX™ Green &nbsp;#49FB5F</span>
+          </div>
+          <div class="meta-row">
+            <span class="meta-label">Treatment</span>
+            <span class="meta-value">Full bleed signal color. Black typography. "gn" logomark scaled to edge. Three roles stacked vertically: designer, system, builder.</span>
+          </div>
+          <div class="meta-row">
+            <span class="meta-label">Intent</span>
+            <span class="meta-value">The card that started the project. Designed to be noticed before it's read. If someone ignores it, the color failed.</span>
+          </div>
+          <div class="design-principle">
+            <p>"If someone ignores the card, the color failed."</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ARTIFACT 02: COLOR STUDY CARD -->
+    <div class="artifact">
+      <div class="artifact-header">
+        <span class="artifact-number">Artifact 02</span>
+        <h2 class="artifact-title">ObNOX™ Mocktails color study</h2>
+      </div>
+      <div class="artifact-body">
+        <img
+          src="../../assets/project-obnox/ObNOX-COLOR-CARD.png"
+          alt="ObNOX Mocktails color study card — all five signal colors with the gn logomark and typographic elements"
+          class="artifact-image"
+        />
+        <div class="artifact-meta">
+          <div class="meta-row">
+            <span class="meta-label">Type</span>
+            <span class="meta-value">Print — color reference card</span>
+          </div>
+          <div class="meta-row">
+            <span class="meta-label">Colors featured</span>
+            <span class="meta-value">ObNOX™ Green · Poison Lily™ · Maniac Magenta™ · Bermuda Harbor™ · Crypto Tangerine™</span>
+          </div>
+          <div class="meta-row">
+            <span class="meta-label">Treatment</span>
+            <span class="meta-value">White field with all five Mocktails expressed as typographic gestures, organic forms, and swatches. Each color performs its role within the composition.</span>
+          </div>
+          <div class="meta-row">
+            <span class="meta-label">Intent</span>
+            <span class="meta-value">The color study card evolved from the business card exercise. A teaching artifact and signal system reference in one object.</span>
+          </div>
+          <div class="artifact-stripe" aria-hidden="true">
+            <span style="background:#49FB5F;"></span>
+            <span style="background:#fb0643;"></span>
+            <span style="background:#e00fde;"></span>
+            <span style="background:#2af2dc;"></span>
+            <span style="background:#fc7326;"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <footer>
+    <span class="footer-copy">&copy; 2026 jennysiede.com &middot; Green Neurons Design and Technologies PBC &middot; All rights reserved.</span>
+    <ul class="footer-links">
+      <li><a href="/terms.html">Terms of Use</a></li>
+    </ul>
+  </footer>
+</body>
+</html>

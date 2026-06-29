@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Color System — Project ObNOX™ — Jenny Siede</title>
+  <meta name="description" content="The ObNOX™ Mocktails palette — five signal colors, each with a role, an emotional outcome, and a reason to exist." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #f2f2f0;
+      --fg: #0e0e0e;
+      --fg-muted: #4a4a4a;
+      --fg-faint: #888;
+      --rule: #d4d4d0;
+      --font: 'DM Sans', sans-serif;
+      --obnox-green: #49FB5F;
+      --poison-lily: #fb0643;
+      --maniac-magenta: #e00fde;
+      --bermuda-harbor: #2af2dc;
+      --crypto-tangerine: #fc7326;
+    }
+
+    html { font-size: 16px; scroll-behavior: smooth; }
+
+    body {
+      background-color: var(--bg);
+      color: var(--fg);
+      font-family: var(--font);
+      font-weight: 400;
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .page { max-width: 1200px; margin: 0 auto; padding: 48px 48px 80px; flex: 1; }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 64px;
+      animation: fadeUp 0.5s ease both;
+    }
+
+    .nav-home {
+      font-size: 0.85rem;
+      color: var(--fg-muted);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .nav-home:hover { color: var(--fg); border-color: var(--fg); }
+
+    .nav-sub { display: flex; gap: 24px; list-style: none; }
+    .nav-sub a {
+      font-size: 0.85rem;
+      color: var(--fg-muted);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .nav-sub a:hover { color: var(--fg); border-color: var(--fg); }
+    .nav-sub a.active { color: var(--fg); border-color: var(--fg); }
+
+    .hero { margin-bottom: 64px; animation: fadeUp 0.5s 0.1s ease both; }
+
+    .eyebrow {
+      font-size: 0.8rem;
+      color: var(--fg-faint);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      font-weight: 700;
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      margin-bottom: 20px;
+    }
+
+    .hero-desc {
+      font-size: clamp(1rem, 1.5vw, 1.1rem);
+      color: var(--fg-muted);
+      max-width: 52ch;
+      line-height: 1.8;
+    }
+
+    /* RULE */
+    .rule-line {
+      font-size: 0.85rem;
+      font-style: italic;
+      color: var(--fg-muted);
+      border-left: 4px solid var(--fg);
+      padding: 12px 20px;
+      margin-bottom: 64px;
+      background: #fff;
+      animation: fadeUp 0.5s 0.15s ease both;
+    }
+
+    /* COLOR CARDS */
+    .color-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      animation: fadeUp 0.5s 0.2s ease both;
+    }
+
+    .color-card {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      min-height: 200px;
+      overflow: hidden;
+    }
+
+    .color-swatch {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 28px;
+    }
+
+    .swatch-hex {
+      font-size: 1rem;
+      font-weight: 700;
+      font-family: 'DM Sans', monospace;
+      letter-spacing: 0.04em;
+    }
+
+    .swatch-name {
+      font-size: 1.4rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      margin-top: 4px;
+    }
+
+    .color-info {
+      background: var(--fg);
+      color: var(--bg);
+      padding: 36px 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .info-role {
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      opacity: 0.45;
+    }
+
+    .info-purpose {
+      font-size: 1rem;
+      line-height: 1.7;
+      opacity: 0.75;
+      max-width: 44ch;
+    }
+
+    .info-question {
+      font-size: 1.1rem;
+      font-weight: 700;
+      font-style: italic;
+      line-height: 1.4;
+    }
+
+    .info-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .tag {
+      font-size: 0.72rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border: 1px solid rgba(255,255,255,0.2);
+      opacity: 0.6;
+    }
+
+    /* SYSTEM RULE */
+    .system-rule {
+      margin-top: 64px;
+      padding-top: 48px;
+      border-top: 1px solid var(--rule);
+      animation: fadeUp 0.5s 0.3s ease both;
+    }
+
+    .system-rule h2 {
+      font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 32px;
+    }
+
+    .rule-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2px;
+    }
+
+    .rule-item {
+      background: var(--fg);
+      color: var(--bg);
+      padding: 28px 24px;
+    }
+
+    .rule-number {
+      font-size: 2.5rem;
+      font-weight: 700;
+      opacity: 0.15;
+      line-height: 1;
+      margin-bottom: 12px;
+    }
+
+    .rule-text {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      opacity: 0.8;
+    }
+
+    footer {
+      border-top: 1px solid var(--rule);
+      padding: 24px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .footer-copy { font-size: 0.8rem; color: var(--fg-faint); }
+    .footer-links { list-style: none; display: flex; gap: 20px; }
+    .footer-links a { font-size: 0.8rem; color: var(--fg-faint); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--fg); }
+
+    @media (max-width: 768px) {
+      .page { padding: 32px 24px 64px; }
+      nav { margin-bottom: 40px; }
+      .color-card { grid-template-columns: 1fr; }
+      .color-swatch { min-height: 160px; }
+      footer { padding: 20px 24px; flex-direction: column; align-items: flex-start; }
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(14px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+
+    <nav aria-label="Site navigation">
+      <a href="/" class="nav-home">← jennysiede.com</a>
+      <ul class="nav-sub">
+        <li><a href="index.html">Overview</a></li>
+        <li><a href="color-system.html" class="active">Color system</a></li>
+        <li><a href="artifacts.html">Artifacts</a></li>
+      </ul>
+    </nav>
+
+    <header class="hero">
+      <p class="eyebrow">Project ObNOX™ &nbsp;·&nbsp; Color system</p>
+      <h1>The Mocktails palette</h1>
+      <p class="hero-desc">
+        Five signal colors. Each with a role, an emotional outcome, and a
+        communication job. No color exists for aesthetic reasons.
+      </p>
+    </header>
+
+    <div class="rule-line">
+      "If a color cannot justify its existence, it should not be included."
+    </div>
+
+    <div class="color-stack">
+
+      <!-- ObNOX Green -->
+      <div class="color-card">
+        <div class="color-swatch" style="background: #49FB5F; color: #0e0e0e;">
+          <span class="swatch-hex">#49FB5F</span>
+          <span class="swatch-name">ObNOX™ Green</span>
+        </div>
+        <div class="color-info">
+          <p class="info-role">Role: Signal color</p>
+          <p class="info-purpose">Pattern interruption and curiosity generation. Engineered for attention, not comfort. Not corporate green. Not sustainability green. Not background green.</p>
+          <p class="info-question">"What is this?"</p>
+          <div class="info-tags">
+            <span class="tag">Loud</span>
+            <span class="tag">Signal</span>
+            <span class="tag">Interrupt</span>
+            <span class="tag">Unapologetic</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Poison Lily -->
+      <div class="color-card">
+        <div class="color-swatch" style="background: #fb0643; color: #fff;">
+          <span class="swatch-hex">#fb0643</span>
+          <span class="swatch-name">Poison Lily™</span>
+        </div>
+        <div class="color-info">
+          <p class="info-role">Role: Provocateur</p>
+          <p class="info-purpose">Introduce tension and challenge assumptions. Creates attraction and friction simultaneously — the cognitive dissonance is the point.</p>
+          <p class="info-question">"Should I like this?"</p>
+          <div class="info-tags">
+            <span class="tag">Attraction</span>
+            <span class="tag">Contrast</span>
+            <span class="tag">Curiosity</span>
+            <span class="tag">Friction</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Maniac Magenta -->
+      <div class="color-card">
+        <div class="color-swatch" style="background: #e00fde; color: #fff;">
+          <span class="swatch-hex">#e00fde</span>
+          <span class="swatch-name">Maniac Magenta™</span>
+        </div>
+        <div class="color-info">
+          <p class="info-role">Role: Disruptor</p>
+          <p class="info-purpose">Break expectations and amplify creative energy. Playfulness and chaos as design intent, not accident.</p>
+          <p class="info-question">"Who approved this?"</p>
+          <div class="info-tags">
+            <span class="tag">Playful</span>
+            <span class="tag">Chaos</span>
+            <span class="tag">Bold</span>
+            <span class="tag">Experimental</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bermuda Harbor -->
+      <div class="color-card">
+        <div class="color-swatch" style="background: #2af2dc; color: #0e0e0e;">
+          <span class="swatch-hex">#2af2dc</span>
+          <span class="swatch-name">Bermuda Harbor™</span>
+        </div>
+        <div class="color-info">
+          <p class="info-role">Role: Navigator</p>
+          <p class="info-purpose">Provide balance, orientation, and visual breathing room within the system. The exhale after the interruption.</p>
+          <p class="info-question">"Where do I go next?"</p>
+          <div class="info-tags">
+            <span class="tag">Calm</span>
+            <span class="tag">Direction</span>
+            <span class="tag">Clarity</span>
+            <span class="tag">Focus</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Crypto Tangerine -->
+      <div class="color-card">
+        <div class="color-swatch" style="background: #fc7326; color: #0e0e0e;">
+          <span class="swatch-hex">#fc7326</span>
+          <span class="swatch-name">Crypto Tangerine™</span>
+        </div>
+        <div class="color-info">
+          <p class="info-role">Role: Catalyst</p>
+          <p class="info-purpose">Create momentum and forward movement. The color that closes the loop — from curiosity to action.</p>
+          <p class="info-question">"What happens next?"</p>
+          <div class="info-tags">
+            <span class="tag">Action</span>
+            <span class="tag">Optimism</span>
+            <span class="tag">Motion</span>
+            <span class="tag">Opportunity</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="system-rule">
+      <h2>Every color must earn its place</h2>
+      <div class="rule-grid">
+        <div class="rule-item">
+          <p class="rule-number">01</p>
+          <p class="rule-text">A purpose</p>
+        </div>
+        <div class="rule-item">
+          <p class="rule-number">02</p>
+          <p class="rule-text">An emotional outcome</p>
+        </div>
+        <div class="rule-item">
+          <p class="rule-number">03</p>
+          <p class="rule-text">A communication role</p>
+        </div>
+        <div class="rule-item">
+          <p class="rule-number">04</p>
+          <p class="rule-text">A reason to exist</p>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <footer>
+    <span class="footer-copy">&copy; 2026 jennysiede.com &middot; Green Neurons Design and Technologies PBC &middot; All rights reserved.</span>
+    <ul class="footer-links">
+      <li><a href="/terms.html">Terms of Use</a></li>
+    </ul>
+  </footer>
+</body>
+</html>
