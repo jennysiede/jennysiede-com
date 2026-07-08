@@ -3,8 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jenny Siede</title>
+  <title>Jenny Siede | Technical Apparel &amp; Product Design Consultant</title>
   <meta name="description" content="Jenny Siede is a technical apparel designer working at the intersection of design, materials, and production." />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Jenny Siede" />
+  <meta property="og:title" content="Jenny Siede | Technical Apparel & Product Design Consultant" />
+  <meta property="og:description" content="Jenny Siede is a technical apparel designer working at the intersection of design, materials, and production." />
+  <meta property="og:url" content="https://jennysiede.com/" />
+  <meta property="og:image" content="https://jennysiede.com/assets/jenny-siede.jpg" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -98,6 +105,24 @@
 
     .cta {
       margin-top: 8px;
+    }
+
+    .cta-group {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .bio p a {
+      color: var(--fg);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      transition: color 0.2s ease;
+    }
+
+    .bio p a:hover {
+      color: var(--fg-muted);
     }
 
     .cta a {
@@ -243,7 +268,7 @@
 
     <nav aria-label="Site navigation">
       <ul class="site-nav">
-        <li><a href="forms/discovery.html">[ Discovery ]</a></li>
+        <li><a href="forms/discovery.html">[ Discovery Consult ]</a></li>
       </ul>
     </nav>
 
@@ -283,17 +308,27 @@
         </p>
         <p>
           With a background in software engineering and manufacturing,
-          she approaches garments as structured systems, where fit,
-          fabric, and construction decisions are made with precision,
-          not guesswork.
+          she approaches garment design as a structured process. Her
+          framework connects design decisions to sourcing, costing,
+          construction, production, and the practical realities of the
+          supply chain.
         </p>
         <p>
-          Her work focuses on the decisions that happen before
-          production begins, where clarity reduces rework and structure
-          ensures consistency at scale.
+          Her work begins before production orders are placed. She
+          develops specifications, organizes product information, and
+          builds the structure needed to reduce waste, protect quality,
+          and keep production consistent.
         </p>
-        <div class="cta">
+        <p>
+          Jenny is the founder of Green Neurons Design and Technologies PBC,
+          where she works with creative and innovative founders, STEAM
+          education programs, and nonprofits to turn complex ideas into
+          clearer, sustainable, and cost-efficient operational systems.
+        </p>
+        <div class="cta cta-group">
           <a href="mailto:jenny@jennysiede.com">jenny@jennysiede.com</a>
+          <a href="https://www.linkedin.com/in/jennysiede/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://greenneurons.us" target="_blank" rel="noopener">greenneurons.us</a>
         </div>
       </div>
     </div>
@@ -301,7 +336,7 @@
   </main>
 
   <footer>
-    <span class="footer-copy">&copy; 2026 jennysiede.com &middot; Green Neurons Design and Technologies PBC &middot; All rights reserved.</span>
+    <span class="footer-copy">&copy; 2026 jennysiede.com &middot; Green Neurons Design and Technologies PBC &middot; Technical apparel, wearable products &amp; STEAM consulting &middot; All rights reserved.</span>
     <ul class="footer-links">
       <li><a href="/terms.html">Terms of Use</a></li>
     </ul>
