@@ -1,0 +1,10 @@
+# Files and folders excluded from the deployed site.
+# Same syntax as .gitignore -- these still live in the repo,
+# they just don't get uploaded as public assets.
+
+.git
+.git/**
+commit.ps1
+archives/**
+wrangler.toml
+.assetsignore
