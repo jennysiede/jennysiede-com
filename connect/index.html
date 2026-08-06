@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Connect &mdash; Jenny Siede</title>
+  <meta name="description" content="Book a free discovery consult or find Jenny Siede's upcoming workshops and speaking engagements." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;700&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #f2f2f0;
+      --fg: #0e0e0e;
+      --fg-muted: #4a4a4a;
+      --fg-faint: #888;
+      --rule: #d4d4d0;
+      --font: 'DM Sans', sans-serif;
+    }
+
+    html { font-size: 16px; scroll-behavior: smooth; }
+
+    body {
+      background-color: var(--bg);
+      color: var(--fg);
+      font-family: var(--font);
+      font-weight: 400;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    /* Nav */
+    .nav {
+      padding: 24px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .nav-back {
+      font-size: 0.875rem;
+      font-weight: 400;
+      color: var(--fg-muted);
+      text-decoration: none;
+      letter-spacing: 0.01em;
+      border-bottom: 1px solid transparent;
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    .nav-back:hover { color: var(--fg); border-color: var(--fg); }
+
+    /* Page */
+    .page {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 64px 48px 120px;
+    }
+
+    .page-eyebrow {
+      font-size: 0.75rem;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--fg-faint);
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 300;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      margin-bottom: 16px;
+    }
+
+    h1 strong { font-weight: 700; }
+
+    .page-hook {
+      font-size: 1.05rem;
+      color: var(--fg-muted);
+      font-weight: 400;
+      margin-bottom: 48px;
+      line-height: 1.7;
+    }
+
+    /* Connect cards */
+    .connect-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-bottom: 16px;
+    }
+
+    .connect-card {
+      display: block;
+      padding: 32px;
+      border: 1px solid var(--rule);
+      text-decoration: none;
+      color: inherit;
+      transition: border-color 0.2s, background 0.2s;
+    }
+
+    .connect-card:hover { border-color: var(--fg); background: #e9e9e5; }
+
+    .connect-card-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--fg-faint);
+      margin-bottom: 12px;
+    }
+
+    .connect-card-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      color: var(--fg);
+      margin-bottom: 10px;
+    }
+
+    .connect-card-desc {
+      font-size: 0.9rem;
+      color: var(--fg-muted);
+      line-height: 1.6;
+      margin-bottom: 18px;
+    }
+
+    .connect-card-arrow {
+      font-size: 0.8rem;
+      letter-spacing: 0.02em;
+      color: var(--fg);
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--rule);
+      padding: 28px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .footer-copy {
+      font-size: 0.8rem;
+      color: var(--fg-faint);
+    }
+
+    .footer-links {
+      list-style: none;
+      display: flex;
+      gap: 24px;
+    }
+
+    .footer-links a {
+      font-size: 0.8rem;
+      color: var(--fg-faint);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--fg); }
+
+    @media (max-width: 640px) {
+      .nav {
+        padding: 16px 24px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+      }
+      .page { padding: 40px 24px 80px; }
+      .connect-grid { grid-template-columns: 1fr; }
+      footer { padding: 24px; flex-direction: column; align-items: flex-start; }
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(12px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .page { animation: fadeUp 0.5s ease both; }
+  </style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="../index.html" class="nav-back">&larr; jennysiede.com</a>
+</nav>
+
+<main class="page">
+
+  <p class="page-eyebrow">Green Neurons Design and Technologies PBC</p>
+  <h1>Let&rsquo;s<strong> Connect</strong></h1>
+  <p class="page-hook">
+    Two ways to reach Jenny &mdash; book a free discovery consult about your
+    project, or find her upcoming workshops and speaking engagements.
+  </p>
+
+  <div class="connect-grid">
+    <a href="discovery.html" class="connect-card">
+      <p class="connect-card-label">Consulting</p>
+      <p class="connect-card-title">Discovery Consult</p>
+      <p class="connect-card-desc">
+        A free 15-minute conversation about your project. Zoom or phone.
+        No pitch, no obligation.
+      </p>
+      <p class="connect-card-arrow">Book a session &rarr;</p>
+    </a>
+
+    <a href="workshop.html" class="connect-card">
+      <p class="connect-card-label">Speaking</p>
+      <p class="connect-card-title">Workshops</p>
+      <p class="connect-card-desc">
+        Innovation workshops on Product Lifecycle Management, manufacturing,
+        and AI-assisted workflow design.
+      </p>
+      <p class="connect-card-arrow">See upcoming session &rarr;</p>
+    </a>
+  </div>
+
+</main>
+
+<footer>
+  <span class="footer-copy">&copy; 2026 jennysiede.com &middot; Green Neurons Design and Technologies PBC &middot; All rights reserved.</span>
+  <ul class="footer-links">
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="../terms.html">Terms of Use</a></li>
+  </ul>
+</footer>
+
+</body>
+</html>

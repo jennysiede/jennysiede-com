@@ -226,27 +226,58 @@
       padding-top: 2px;
     }
 
-    /* Footnote */
-    .loi-note {
+    /* Invite note */
+    .invite-note {
       margin-top: 48px;
-      padding-top: 32px;
-      border-top: 1px solid var(--rule);
+      padding: 28px 32px;
+      background: #e9e9e5;
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
     }
 
-    .loi-note p {
-      font-size: 0.82rem;
-      color: var(--fg-faint);
-      line-height: 1.7;
-    }
-
-    .loi-note a {
+    .invite-icon {
+      flex-shrink: 0;
+      margin-top: 2px;
       color: var(--fg-muted);
+    }
+
+    .invite-icon svg { width: 26px; height: 26px; }
+
+    .invite-note p {
+      font-size: 0.88rem;
+      color: var(--fg-muted);
+      line-height: 1.7;
+      margin-bottom: 8px;
+    }
+
+    .invite-note p:last-child { margin-bottom: 0; }
+
+    .invite-note .invite-aside {
+      font-size: 0.8rem;
+      color: var(--fg-faint);
+    }
+
+    .invite-note a {
+      color: var(--fg);
       text-decoration: underline;
       text-underline-offset: 3px;
       transition: color 0.2s;
     }
 
-    .loi-note a:hover { color: var(--fg); }
+    .invite-note a:hover { color: var(--fg-muted); }
+
+    .updated-line {
+      margin-top: 16px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.72rem;
+      letter-spacing: 0.02em;
+      color: var(--fg-faint);
+    }
+
+    .updated-line svg { width: 14px; height: 14px; flex-shrink: 0; }
 
     /* Footer */
     footer {
@@ -289,6 +320,7 @@
       .nav-links { gap: 20px; }
       .page { padding: 40px 24px 80px; }
       .book-block { padding: 24px; }
+      .invite-note { flex-direction: column; padding: 24px; }
       footer { padding: 24px; flex-direction: column; align-items: flex-start; }
     }
 
@@ -305,6 +337,7 @@
 <nav class="nav">
   <a href="../index.html" class="nav-back">&larr; jennysiede.com</a>
   <div class="nav-links">
+    <a href="index.html" class="nav-site">[ Connect ]</a>
     <a href="https://scheduler.zoom.us/jenny-c-siede/discovery-consult" class="nav-site" target="_blank" rel="noopener">[ Booking ]</a>
     <a href="workshop.html" class="nav-site" aria-current="page">[ Workshops ]</a>
   </div>
@@ -432,16 +465,45 @@ how each decision affects quality, waste, and the path from concept to productio
     </p>
   </div>
 
-  <div class="loi-note">
-    <p>
-      For workshop invitations, speaking engagements, or questions about the
-      August 17 session,
-      <a href="mailto:jenny@jennysiede.com?subject=Workshop%20Inquiry">email jenny@jennysiede.com</a>.
-    </p>
-    <p>
-      Beginning 2027, all speaking and workshop engagements require a small honorarium.
-    </p>
+  <div class="invite-note">
+    <div class="invite-icon">
+      <svg viewBox="0 0 100 100" fill="currentColor" aria-hidden="true">
+        <defs>
+          <polygon id="ray" points="50,54 47,27 50,10 53,27"/>
+        </defs>
+        <use href="#ray" transform="rotate(15 50 50)"/>
+        <use href="#ray" transform="rotate(45 50 50)"/>
+        <use href="#ray" transform="rotate(75 50 50)"/>
+        <use href="#ray" transform="rotate(105 50 50)"/>
+        <use href="#ray" transform="rotate(140 50 50)"/>
+        <use href="#ray" transform="rotate(220 50 50)"/>
+        <use href="#ray" transform="rotate(255 50 50)"/>
+        <use href="#ray" transform="rotate(285 50 50)"/>
+        <use href="#ray" transform="rotate(315 50 50)"/>
+        <use href="#ray" transform="rotate(345 50 50)"/>
+        <polygon points="50,54 47,80 50,97 53,80"/>
+        <circle cx="50" cy="50" r="6"/>
+      </svg>
+    </div>
+    <div>
+      <p>
+        Have a workshop, panel, or speaking opportunity in mind? I&rsquo;d love
+        to hear about it &mdash;
+        <a href="mailto:jenny@jennysiede.com?subject=Workshop%20Inquiry">email jenny@jennysiede.com</a>
+        and let&rsquo;s talk details.
+      </p>
+      <p class="invite-aside">
+        Starting in 2027, I&rsquo;m bringing the same energy to your event
+        with a small honorarium in the mix, because ideas die without execution
+        &mdash; let&rsquo;s work together.
+      </p>
+    </div>
   </div>
+
+  <p class="updated-line">
+    <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="50" cy="50" r="42"/><rect x="34" y="40" width="30" height="34" rx="2"/><line x1="30" y1="38" x2="68" y2="38"/><circle cx="49" cy="30" r="3"/><line x1="49" y1="33" x2="49" y2="38"/><path d="M64 46 q14 2 14 14 q0 12 -14 14"/><line x1="49" y1="44" x2="49" y2="70"/><line x1="42" y1="52" x2="56" y2="52"/></svg>
+    Updated 8.5.2026
+  </p>
 
 </main>
 
