@@ -149,6 +149,25 @@
 
     .section a:hover { color: var(--fg-muted); }
 
+    .chip-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .chip {
+      font-size: 0.78rem;
+      letter-spacing: 0.02em;
+      color: var(--fg-muted);
+      text-decoration: none;
+      padding: 8px 14px;
+      border: 1px solid var(--rule);
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    .chip:hover { color: var(--fg); border-color: var(--fg); }
+
     hr {
       border: none;
       border-top: 1px solid var(--rule);
@@ -382,6 +401,28 @@ how each decision affects quality, waste, and the path from concept to productio
   <hr>
 
   <div class="section">
+    <h2>Past Workshops & Lectures</h2>
+    <p>
+      Jenny has spoken and juried for organizations across the apparel and
+      textile industry, including:
+    </p>
+    <div class="chip-grid">
+      <a href="https://fgi.org/" target="_blank" rel="noopener" class="chip">Fashion Group International</a>
+      <a href="https://www.smu.edu/" target="_blank" rel="noopener" class="chip">Southern Methodist University</a>
+      <a href="https://www.ttu.edu/" target="_blank" rel="noopener" class="chip">Texas Tech University</a>
+      <a href="https://www.wadecollege.edu/" target="_blank" rel="noopener" class="chip">Wade College</a>
+      <a href="https://www.dallascollege.edu/" target="_blank" rel="noopener" class="chip">Dallas College</a>
+      <a href="https://www.fthree.org/" target="_blank" rel="noopener" class="chip">FThree.org</a>
+      <a href="https://www.ainshowcase.org/" target="_blank" rel="noopener" class="chip">AIN Showcase</a>
+      <a href="https://www.itaaonline.org/" target="_blank" rel="noopener" class="chip">ITAA</a>
+      <a href="https://www.fwdfashiongroup.org/programs" target="_blank" rel="noopener" class="chip">FWD Fashion Group</a>
+      <a href="https://pi.tv/" target="_blank" rel="noopener" class="chip">PI Apparel</a>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="section">
     <h2>About AIN Showcase</h2>
     <p>
       Accessories In The Nude (AIN) Showcase supports emerging accessory
@@ -396,6 +437,9 @@ how each decision affects quality, waste, and the path from concept to productio
       For workshop invitations, speaking engagements, or questions about the
       August 17 session,
       <a href="mailto:jenny@jennysiede.com?subject=Workshop%20Inquiry">email jenny@jennysiede.com</a>.
+    </p>
+    <p>
+      Beginning 2027, all speaking and workshop engagements require a small honorarium.
     </p>
   </div>
 
